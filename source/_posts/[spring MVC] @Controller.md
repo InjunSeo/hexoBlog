@@ -335,3 +335,6 @@ public class ResponseViewController {
     }
 }
 ```
+
+# Reference
+* 김영한(2021-03-21), Spring MVC 1편, Ch6 S13 ~ S14
