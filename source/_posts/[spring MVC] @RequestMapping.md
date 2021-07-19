@@ -18,7 +18,7 @@ public class MappingController {
  * "/hello-basic" 또는 "/hello" url 호출 시, 해당 메서드가 실행되도록 매핑해준다.
  * Http 메서드를 모두 허용해준다. GET, POST, PUT 등
 
- ## HTTP 메서드 매핑
+ # HTTP 메서드 매핑
  * 특정 HTTP 메서드 요청만 허용해준다.
 ```java
     @GetMapping("/mapping-get")
@@ -29,7 +29,7 @@ public class MappingController {
 ```
 * @PostMapping, @PutMapping 등
 
-## 경로 변수 사용
+# 경로 변수 사용
 * @PathVariable
 ```java
   @GetMapping("/mapping/{userId}")
@@ -56,7 +56,7 @@ public class MappingController {
   1. 특정 헤더 조건 매핑: header=".."
   2. 미디어타입 조건 매핑: consumes="..", produces=".."
 
-
-## reference
+# Reference
+* 김영한(2021-03-21), Spring MVC 1편, Ch6 S13 ~ S14
 
  
