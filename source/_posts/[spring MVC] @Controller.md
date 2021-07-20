@@ -15,13 +15,13 @@ tags:
 
 ___
 
-## HTTP 요청값 처리
+# HTTP 요청값 처리
 * Http 요청 데이터를 조회하는 방법: Http 요청 메시리를 통해 클라이언트가 서버로 데이터를 전달하는 방법
   1. GET: query parameter
   2. POST: HTML form
   3. HTTP Message body에 데이터 담아서 요청: 주로 JSON
 
-### @ReuqestParam
+## @ReuqestParam
 * 메서드 옆에 `@Requestparam` 추가해서 사용
 
 ```java
@@ -38,7 +38,7 @@ public class RequestParamController {
         return "Ok";
     }
 ```
-변수를 HTTP parameter 이름과 같게 설정하면, `@RequestParam(name="x")` 생략 가능하다.
+* 변수를 HTTP parameter 이름과 같게 설정하면, `@RequestParam(name="x")` 생략 가능하다.
 ```java
     @ResponseBody
     @RequestMapping("/request-param-v3")
@@ -49,7 +49,7 @@ public class RequestParamController {
         return "ok";
     }
 ```
- `@RequestParam`도 생략 가능하다.
+* `@RequestParam`도 생략 가능하다.
 ```java
     @ResponseBody
     @RequestMapping("/request-param-v4")
@@ -58,7 +58,7 @@ public class RequestParamController {
         return "ok";
     }
 ```
-parameter 필수 여부 
+* parameter 필수 여부 
 ```java
     @ResponseBody
     @RequestMapping("/request-param-required")
@@ -71,7 +71,7 @@ parameter 필수 여부
         return "ok";
     }
 ```
-기본값 적용
+* 기본값 적용
 ```java
     @ResponseBody
     @RequestMapping("/request-param-default")
@@ -82,7 +82,7 @@ parameter 필수 여부
         return "ok";
     }
 ```
-파라미터를 Map으로 조회 가능하다.
+* 파라미터를 Map으로 조회 가능하다.
 ```java
  
     @ResponseBody
@@ -92,7 +92,7 @@ parameter 필수 여부
         return "ok";
     }
 ```
-### @ModelAttrubute
+## @ModelAttrubute
 * 요청 파라미터를 받아서 필요한 객체를 만들고 그 객체에 값을 넣어주기 위해 `@modelAttribute` 사용한다.
 ```java
     @ResponseBody
@@ -118,14 +118,14 @@ parameter 필수 여부
 }
 ```
 
-### @RequestBody 
+## @RequestBody 
 * HTTP message body에 데이터를 직접 담아서 요청할때 사용한다.데이터를 담을 때, 크게 두 가지 방식이 있다.
   1. 단순 메시지
   2. JSON
 
-### @RequestBody:  (Case1) 단순 메시지
+## @RequestBody:  (Case1) 단순 메시지
 
-#### 서블릿
+### 서블릿
 ```java
 @Slf4j
 @Controller
@@ -139,7 +139,7 @@ public class RequestBodyStringController {
         res.getWriter().write("Ok");
     }
 ```
-#### spring MVC 제공 parameter: :`InputStream` (reader), `OuterStream` (writer) 
+### spring MVC 제공 parameter: :`InputStream` (reader), `OuterStream` (writer) 
 ```java
 
     @PostMapping("/request-body-string-v2")
@@ -149,7 +149,7 @@ public class RequestBodyStringController {
         writer.write("Ok");
     }
 ```
-#### HttpEntity: HTTP header, body 정보를 편라하게 조회
+### HttpEntity: HTTP header, body 정보를 편라하게 조회
 * 응답에서도 HttpEntity 사용 가능
 ```java    
 
@@ -161,7 +161,7 @@ public class RequestBodyStringController {
     }
 
 ```
-#### @Requestbody: 메시지 바디 정보를 직접 조회
+### @Requestbody: 메시지 바디 정보를 직접 조회
 ```java
     @ResponseBody
     @PostMapping("/request-body-string-v4")
@@ -171,8 +171,8 @@ public class RequestBodyStringController {
     }
 }
 ```
-### @RequestBody:  (Case2) JSON
-#### Servlet 사용
+## @RequestBody:  (Case2) JSON
+### Servlet 사용
 ```java
 @Slf4j
 @Controller
@@ -190,7 +190,7 @@ public class RequestBodyJsonController {
         res.getWriter().write("ok");
     }
 ```
-#### @RequestBody
+### @RequestBody
 ```java
     @ResponseBody
     @PostMapping("/request-body-json-v2")
@@ -202,7 +202,7 @@ public class RequestBodyJsonController {
         return "Ok";
     }
 ```
-#### @RequestBody 에 직접 만든 객체를 지정할 수 있다
+### @RequestBody 에 직접 만든 객체를 지정할 수 있다
 ```java
     @ResponseBody
     @PostMapping("/request-body-json-v3")
@@ -218,7 +218,7 @@ public class RequestBodyJsonController {
         return data;
     }
 ```
-#### HttpEntity를 사용해서 객체로 데이터 저장 가능하다.
+### HttpEntity를 사용해서 객체로 데이터 저장 가능하다.
 ```java    
     @ResponseBody
     @PostMapping("/request-body-json-v4")
@@ -236,7 +236,7 @@ public class RequestBodyJsonController {
 * HttpEntity , @RequestBody 를 사용하면 HTTP 메시지 컨버터가 HTTP 메시지 바디의 내용을 우리가 원하는 문자나 객체 등으로 변환해준다.
 ___
 
-## HTTP 응답 처리
+# HTTP 응답 처리
 * 우리가 이전에 본 spring MVC 구조에서, Controller는 ModelAndView에 경로를 담아서 반환했다. 하지만, annotation 기반의 @controller에서는 다른 것들 --String, void 등도 가능하다. 이것이 어떻게 가능한지에 대해서는 다음 장에서 살펴보겠다.
 * 여기서 우리는 스프링에서 응답 데이터를 만들고 반환하는 기능들에 대해서 알아보고자 한다.
 
@@ -259,7 +259,7 @@ public class SpringMemberListControllerV1 {
   2. view template: 뷰 템플릿을 거쳐서 HTML이 생성되고, 뷰가 응답을 만들어서 전달한다
   3. HTTP message
 
-### view로 전달
+## view로 전달
 ```java
 @Controller
 public class ResponseViewController {
@@ -284,7 +284,7 @@ public class ResponseViewController {
 
 ```
 * response/hello 로 뷰 리졸버가 실행되어서 뷰를 찾고, 렌더링 한다
-### Http API
+## Http API
 * view template을 거치지 않고, 직접 Http 메시지 바디에 JSON 같은 형식으로 데이터를 담아서 보내는 방법
 
 ```java
