@@ -49,7 +49,7 @@ public class RequestParamController {
         return "ok";
     }
 ```
- `@RequestParam`도 생략 가능하다.
+ * `@RequestParam`도 생략 가능하다.
 ```java
     @ResponseBody
     @RequestMapping("/request-param-v4")
@@ -58,7 +58,7 @@ public class RequestParamController {
         return "ok";
     }
 ```
-parameter 필수 여부 
+* parameter 필수 여부 
 ```java
     @ResponseBody
     @RequestMapping("/request-param-required")
