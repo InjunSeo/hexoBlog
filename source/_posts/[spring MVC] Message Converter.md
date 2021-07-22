@@ -2,6 +2,11 @@
 title: "[spring MVC] Message Converter" 
 date: 2021-07-15 19:29:24
 tags:
+	- spring
+categories:
+	- spring
+	- spring MVC
+	
 ---
 
 # Message Converter 사용 이유
