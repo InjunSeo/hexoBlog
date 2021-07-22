@@ -59,7 +59,7 @@ pagination_dir: page
 include: null
 exclude: null
 ignore: null
-theme: icarus
+theme: tranquilpeak
 deploy:
   type: git
   repo: https://github.com/InjunSeo/injunSeo.github.io.git
