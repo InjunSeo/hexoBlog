@@ -1,6 +1,9 @@
 ---
 title: "[spring MVC] @RequestMapping" 
 tags:
+categories:
+	- spring
+	- spring MVC
 ---
 # 기본 요청
 * @RequestMapping
