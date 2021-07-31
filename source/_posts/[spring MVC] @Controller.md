@@ -2,6 +2,9 @@
 title: "[spring MVC] @Controller"
 date: 2021-07-15 19:29:15
 tags:
+categories:
+	- spring
+	- spring MVC
 ---
 
 # @Controller
