@@ -1,5 +1,5 @@
 ---
-title: Git reset
+title:  "[Git] reset"
 date: 2021-07-20 17:50:02
 tags:
 ---
